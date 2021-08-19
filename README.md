@@ -1,3 +1,3 @@
-#My Website
+My Website
 
-Practicing my web dev skills by making a website of my own.
+Practicing my web development skills by making a website of my own.
