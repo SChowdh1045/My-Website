@@ -11,7 +11,13 @@
 	<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&family=Russo+One&display=swap" rel="stylesheet">
 
 	<link rel="stylesheet" type="text/css" href="default.css">
-	<link id="theme-style" rel="stylesheet" type="text/css" href="">
+
+	<!-- Modified this line w/ JavaScript (To change website's theme colors) -->
+	<link id="theme-style" rel="stylesheet" type="text/css" href=""> 
+	
+	<script src="https://kit.fontawesome.com/fcef32330d.js" crossorigin="anonymous"></script>
+
+	<script src="website(js).js" defer></script>
 </head>
 <body>
 
@@ -42,10 +48,13 @@
 
 				<div class="left-column">
 					<img id="profile_pic" src="images/110038846.jpg">
-					<h5 style="text-align: center; line-height: 0;">Pick Your Theme</h5>
+					<h5 id="pick_your_theme">Pick Your Theme</h5>
 
-					<div id="theme-options-wrapper">
+					<div class="theme-options-wrapper">
 						<div data-mode="light" id="light-mode" class="theme-dot"></div>
+					</div>
+
+					<div class="theme-options-wrapper">
 						<div data-mode="blue" id="blue-mode" class="theme-dot"></div>
 						<div data-mode="purple" id="purple-mode" class="theme-dot"></div>
 					</div>
@@ -58,12 +67,13 @@
 							<div id="corner-tl" class="corner"></div>
 							<div id="corner-tr" class="corner"></div>
 							<h3>A Bit About Myself...</h3>
-							<p>I am a student at University of Windsor pursuing a bachelor's degree in Software Engineering. 
-								I have a great passion for programming and anything tech-related</p>
+							<p>I am a student at the University of Windsor pursuing a bachelor's degree in Computer Science 
+								with a specialization in Software Engineering. I have a great passion for programming and anything tech-related.</p>
 							<div id="corner-br" class="corner"></div>
 							<div id="corner-bl" class="corner"></div>
 						</div>
 					</div>
+
 				</div>
 			</div>
 		</div>
@@ -74,7 +84,7 @@
 
 			<div class="about-wrapper">
 				<div class="about-me">
-					<h4>More about me</h4>
+					<h4>What I Enjoy...</h4>
 
 					<p>I like to tinker around with different programming languages and tools to slowly build up some practical skills.</p>
 
@@ -121,6 +131,31 @@
 		</div>
 	</section>
 
+	<!---------------- EDUCATION ---------------->
+	<section class="s2">
+		<div class="main-container">
+			<h2 style="text-align: center;">Education</h2>
+
+			<div class="education">
+				<div id="high_school">
+					<h4>High School</h4>
+					<img src="images/Massey_Logo.png" alt="Vincent Massey Secondary School">
+					<p>Vincent Massey Secondary School</p>
+					<p>Sep 2016 - June 2020</p>
+				</div>
+
+				<div id="uni">
+					<h4>University</h4>
+					<img src="images/UofWindsor.png" alt="University of Windsor">
+					<p>Bachelor's Degree - University of Windsor</p>
+					<p>Sep 2020 - Present</p>
+				</div>
+			</div>
+
+		</div>
+	</section>
+
+	<!---------------- CONTACT ---------------->
 	<section class="s1">
 		<div class="main-container">
 			<a href=""></a>
@@ -146,6 +181,7 @@
 		</div>
 	</section> 
 
-	<script type="text/javascript" src="website(js).js"></script>
+	<button id="backToTop"><i class="fas fa-arrow-up"></i></button>
+
 </body>
 </html>

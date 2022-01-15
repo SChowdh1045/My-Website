@@ -14,8 +14,6 @@
 
 
 	--buttonColor:black;
-
-
 }
 
 
@@ -66,7 +64,7 @@ h6 { font-size: 16px;}
 
 .s2{
 	background-color: var(--secondaryColor);
-	border-bottom:1px solid var(--borderColor);
+	border-bottom:2px solid var(--borderColor);
 	overflow:auto;
 }
 
@@ -174,11 +172,17 @@ h6 { font-size: 16px;}
 	height: 250px;
 	width: 200px;
 	object-fit: cover;
-	border:2px solid var(--borderColor);
+	border:3px solid var(--borderColor);
 }
 
+#pick_your_theme{
+	text-align: center; 
+	line-height: 0;
+	margin-bottom: 18px; 
+	margin-top: 45px;
+}
 
-#theme-options-wrapper{
+.theme-options-wrapper{
 	display: flex;
 	justify-content: center;
 }
@@ -230,19 +234,20 @@ h6 { font-size: 16px;}
 
 	padding-top: 50px;
 	padding-bottom: 50px;
+	margin-bottom: 70px;
 }
 
 
 #preview-shadow{
 	background-color: var(--previewShadow);
-	max-width: 300px;
-	height: 180px;
+	width: 400px;
+	height: 240px;
 	padding-left: 30px;
 	padding-top: 30px;
 }
 
 #preview{
-	width: 300px;
+	width: 410px;
 	border:1.5px solid #17a2b8;
 	background-color: var(--previewBg);
 	padding:15px;
@@ -295,6 +300,10 @@ h6 { font-size: 16px;}
 	background-color: var(--previewShadow);
 }
 
+#skills ul{
+	padding: 0;
+}
+
 .social-links{
 	display: grid;
 	align-content: center;
@@ -305,45 +314,51 @@ h6 { font-size: 16px;}
 	width: 100%;
 }
 
-
-.post-wrapper{
-	display: grid;
-	grid-template-columns: repeat(auto-fit, 320px);
-	gap:20px;
-	justify-content: center;
-	padding-bottom: 50px;
+/************************** EDUCATION **************************/
+.education{
+	display: flex;
+	justify-content: space-around;
 }
 
-.post{
-	border:1px solid var(--borderColor);
-	-webkit-box-shadow: -2px 7px 21px -9px rgba(0,0,0,0.75);
-	-moz-box-shadow: -2px 7px 21px -9px rgba(0,0,0,0.75);
-	box-shadow: -2px 7px 21px -9px rgba(0,0,0,0.75);
+.education h4{
+	margin-bottom: 0px;
 }
 
-.thumbnail{
-	display: block;
-	width: 100%;
-	height:180px;
-	object-fit: cover;
+.education p:last-of-type{
+	padding-bottom: 30px;
 }
 
-.post-preview{
-	background-color: #fff;
-	padding:15px;
+#high_school{
+	text-align: center;
 }
 
-.post-title{
-	color:black;
-	margin: 0;
+#high_school img{
+	width: 133px;
+	height: 133px;
 }
 
-.post-intro{
-	color:#4b5156;
-	font-size: 14px;
+#high_school p:first-of-type{
+	margin-top: 0;
 }
 
+#uni{
+	text-align: center;
+}
 
+#uni img{
+	width: 96.2px;
+	height: 119px;
+}
+
+#uni h4{
+	margin-bottom: 10px;
+}
+
+#uni p:first-of-type{
+	margin-top: 4px;
+}
+
+/************************** CONTACT **************************/
 #contact-form{
 	display: block;
 	max-width: 600px;
@@ -387,7 +402,63 @@ h6 { font-size: 16px;}
 	border:none;
 }
 
+#backToTop{
+	display: none;
+	position: fixed;
+	bottom: 17px;
+	right: 12px; 
+	padding: 15px 10px;
+	width: 50px;
+	font-size: 25px;
+	border-radius: 16px;
+	border: 1px solid black;
+	cursor: pointer;
+	color: white;
+}
 
+
+/************************** Button Animations **************************/
+
+/* When the button shows up */
+.btnEntrance {
+	animation-duration: 0.5s;
+	animation-fill-mode: both;
+	animation-name: btnEntrance;
+  }
+  
+  /* fadeInUp */
+  @keyframes btnEntrance {
+	from {
+	  opacity: 0;
+	  transform: translate3d(0, 100%, 0);
+	}
+	to {
+	  opacity: 1;
+	  transform: translate3d(0, 0, 0);
+	}
+  }
+  
+  /* When the button leaves */
+  .btnExit {
+	animation-duration: .25s;
+	animation-fill-mode: both;  
+	animation-name: btnExit;
+  }
+  
+  /* fadeOutDown */
+  @keyframes btnExit {
+	from {
+	  opacity: 1;
+	}
+	to {
+	  opacity: 0;
+	  transform: translate3d(0, 100%, 0);
+	}
+  }
+
+
+
+/************************** Media Screens **************************/
 @media screen and (max-width: 1200px){
 	.main-container{
 		width: 95%;
