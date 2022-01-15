@@ -1,3 +1,3 @@
 My Website
 
-Practicing my web development skills by making a website of my own.
+Practicing my web development skills by making a simple website. I will continue adding new features from time to time...
