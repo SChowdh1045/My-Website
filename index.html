@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>Salman Chowdhury</title>
-
 
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" />
 
@@ -19,8 +19,10 @@
 
 	<script src="website(js).js" defer></script>
 </head>
+
 <body>
 
+	<!---------------- INTRODUCTION ---------------->
 	<section class="s1">
 		<div class="main-container">
 			<div class="greeting-wrapper">
@@ -48,7 +50,7 @@
 
 				<div class="left-column">
 					<img id="profile_pic" src="images/110038846.jpg">
-					<h5 id="pick_your_theme">Pick Your Theme</h5>
+					<h5 id="pick_your_theme">Pick Your Theme!</h5>
 
 					<div class="theme-options-wrapper">
 						<div data-mode="light" id="light-mode" class="theme-dot"></div>
@@ -79,6 +81,7 @@
 		</div>
 	</section>
 
+	<!---------------- A BIT MORE ABOUT ME + SOCIAL LINKS ---------------->
 	<section class="s2">
 		<div class="main-container">
 
@@ -119,11 +122,28 @@
 				
 				<div class="social-links">
 					<img id="social_img" src="images/social-media.jpg">
-					<h3>Some of my social links</h3>
+					<h3 style="margin: 18px 0;">Some of my social links</h3>
 					
-					<a target="_blank" href="https://github.com/SChowdh1045">Github: @SChowdh1045</a>
-					<br>
-					<a target="_blank" href="https://www.instagram.com/schowdhury3262/">Instagram: @schowdhury3262</a>			
+					<ul>
+						<li>
+							<a target="_blank" href="https://github.com/SChowdh1045">Github: @SChowdh1045</a>				
+						</li>
+						<br>
+
+						<li>
+
+							<a target="_blank" href="https://www.linkedin.com/in/salman-chowdhury-0748881b7/">LinkedIn</a>													
+						</li>
+						<br>
+
+						<li>
+							<a target="_blank" href="https://www.instagram.com/schowdhury3262/">Instagram: @schowdhury3262</a>
+						</li>
+						
+						
+						
+					</ul>
+						
 					
 				</div>
 			</div>
@@ -141,6 +161,7 @@
 					<h4>High School</h4>
 					<img src="images/Massey_Logo.png" alt="Vincent Massey Secondary School">
 					<p>Vincent Massey Secondary School</p>
+					<p>Windsor, ON</p>
 					<p>Sep 2016 - June 2020</p>
 				</div>
 
@@ -148,6 +169,7 @@
 					<h4>University</h4>
 					<img src="images/UofWindsor.png" alt="University of Windsor">
 					<p>Bachelor's Degree - University of Windsor</p>
+					<p>Windsor, ON</p>
 					<p>Sep 2020 - Present</p>
 				</div>
 			</div>
@@ -158,30 +180,35 @@
 	<!---------------- CONTACT ---------------->
 	<section class="s1">
 		<div class="main-container">
-			<a href=""></a>
+			<!-- <a href=""></a> -->
 			<h3 style="text-align: center;">Get In Touch</h3>
 
-			<form id="contact-form">
+			<form id="contact-form" action="https://formsubmit.co/schowdhury3262@gmail.com" method="POST"> 
 				<a name="contact"></a>
 
 				<label>Name</label>
-				<input class="input-field" type="text" name="name">
+				<input class="input-field" type="text" name="name" required>
 
 				<label>Subject</label>
 				<input class="input-field" type="text" name="subject">
 
 				<label>Email</label>
-				<input class="input-field" type="text" name="email">
+				<input class="input-field" type="text" name="email" required>
 
 				<label>Message</label>
 				<textarea class="input-field" name="message"></textarea>
 
 				<input id="submit-btn" type="submit" value="Send">
-			</form>
+
+				<input type="hidden" name="_subject" value="New submission!">
+
+				<input type="hidden" name="_next" value="http://127.0.0.1:5500/MY%20WEBSITE/website(html).html">
+			</form>  
+		
 		</div>
 	</section> 
 
+	<!---------------- SCROLL-TO-TOP BUTTON ---------------->
 	<button id="backToTop"><i class="fas fa-arrow-up"></i></button>
-
 </body>
 </html>

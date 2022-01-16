@@ -93,5 +93,7 @@ function scrollingFunction(){
 document.addEventListener("scroll", scrollingFunction);
 
 //Just to scroll back to top of the page upon clicking the button
-toTop.addEventListener("click", () => {window.scrollTo(0,0)})
+toTop.addEventListener("click", () => {window.scrollTo(0,0)});
 
+
+//******************** Contact Form ********************//
