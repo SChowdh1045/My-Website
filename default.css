@@ -411,6 +411,10 @@ h6 { font-size: 16px;}
 	cursor: pointer;
 }
 
+#submit-btn:active{
+	background-color: var(--secondaryColor);
+}
+
 /************************** Button Animations **************************/
 #backToTop{
 	display: none;

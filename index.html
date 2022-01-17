@@ -15,7 +15,8 @@
 	<!-- Modified this line w/ JavaScript (To change website's theme colors) -->
 	<link id="theme-style" rel="stylesheet" type="text/css" href=""> 
 	
-	<script src="https://kit.fontawesome.com/fcef32330d.js" crossorigin="anonymous"></script>
+	<script src="https://smtpjs.com/v3/smtp.js" defer></script>
+	<script src="https://kit.fontawesome.com/fcef32330d.js" crossorigin="anonymous" defer></script>
 
 	<script src="website(js).js" defer></script>
 </head>
@@ -33,7 +34,7 @@
 			<div class="intro-wrapper">
 				<div class="nav-wrapper">
 
-					<a href="website(html).html">
+					<a href="index.html">
 						<div class="dots-wrapper">
 							<div id="dot-1" class="browser-dot"></div>
 							<div id="dot-2" class="browser-dot"></div>
@@ -43,7 +44,7 @@
 					
 
 					<ul id="navigation">
-						<li><a href="website(html).html#contact">Contact Me</a></li>
+						<li><a href="index.html#contact-form">Contact Me</a></li>
 
 					</ul>
 				</div>
@@ -180,17 +181,11 @@
 	<!---------------- CONTACT ---------------->
 	<section class="s1">
 		<div class="main-container">
-			<!-- <a href=""></a> -->
 			<h3 style="text-align: center;">Get In Touch</h3>
 
-			<form id="contact-form" action="https://formsubmit.co/schowdhury3262@gmail.com" method="POST"> 
-				<a name="contact"></a>
-
+			<form method="POST"  id="contact-form"> 
 				<label>Name</label>
 				<input class="input-field" type="text" name="name" required>
-
-				<label>Subject</label>
-				<input class="input-field" type="text" name="subject">
 
 				<label>Email</label>
 				<input class="input-field" type="text" name="email" required>
@@ -199,10 +194,6 @@
 				<textarea class="input-field" name="message"></textarea>
 
 				<input id="submit-btn" type="submit" value="Send">
-
-				<input type="hidden" name="_subject" value="New submission!">
-
-				<input type="hidden" name="_next" value="https://schowdh1045.github.io/Salman-Chowdhury/">
 			</form>  
 		
 		</div>
@@ -210,5 +201,66 @@
 
 	<!---------------- SCROLL-TO-TOP BUTTON ---------------->
 	<button id="backToTop"><i class="fas fa-arrow-up"></i></button>
+
+
+	<!---------------- CONTACT FORM JS ---------------->
+	<script type="module">
+		// Import the functions you need from the SDKs you need
+		import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.3/firebase-app.js";
+		import { getDatabase, ref, set, push} from "https://www.gstatic.com/firebasejs/9.6.3/firebase-database.js";		
+	  
+		// My web app's Firebase configuration
+		const firebaseConfig = {
+		  apiKey: "AIzaSyCtpeT3Raf7a9-E3JZObP1yFlJiylTX_9U",
+		  authDomain: "contact-form-aca65.firebaseapp.com",
+		  projectId: "contact-form-aca65",
+		  storageBucket: "contact-form-aca65.appspot.com",
+		  messagingSenderId: "234835608175",
+		  appId: "1:234835608175:web:5c05d0a2c7cf59ee07039a"
+		};
+	  
+		// Initialize Firebase
+		const app = initializeApp(firebaseConfig);
+
+		const db = getDatabase(app);
+		const dbRef = ref(db, "Users"); //Parent node #1 (main node) named "Users" to keep track of users
+		const newUser = push(dbRef); //Pushing child nodes, where each child node is a user that has sent mail
+		
+		//Upon submitting the form
+		document.querySelector("#submit-btn"),addEventListener("submit", (event) => {
+			event.preventDefault();
+
+			// WRITING ONTO DATABASE
+			let info = document.querySelectorAll(".input-field");
+
+			let name = info[0].value;
+			let email = info[1].value;
+			let message = info[2].value;
+
+			set( newUser, {
+				userName: name,				
+				userEmail: email,
+				userMessage: message,
+			} );			
+
+			// SENDING EMAIL
+			sendEmail(name, email, message);
+
+			document.querySelector("#contact-form").reset(); //Simply resetting the contact form fields
+		} );
+
+		function sendEmail(name, email, message){
+			Email.send({
+				Host: "smtp.gmail.com",
+				Username: "schowdhury3262@gmail.com",
+				Password: "vrvszgzrgrzyeqmk",
+				To: "schowdhury3262@gmail.com",
+				From: "schowdhury3262@gmail.com",
+				Subject: `${name} has sent you a message`,
+				Body: `Name: ${name} <br> Email: ${email} <br> Message: ${message}`,
+			});
+    	}
+ 
+	</script>
 </body>
 </html>

@@ -11,7 +11,6 @@ else{
 
 let themeDots = document.getElementsByClassName("theme-dot")
 
-
 for (let i=0; themeDots.length > i; i++){
 	themeDots[i].addEventListener('click', function(){
 		let mode = this.dataset.mode
@@ -47,7 +46,7 @@ function setTheme(mode){
 		document.querySelector("#theme-style").href = 'default.css'
 		toTopBtn.style.backgroundColor = lightDefault;
 		btnBackgroundColor("mouseenter", lightHover);
-		btnBackgroundColor("mouseleave", lightDefault);
+		btnBackgroundColor("mouseleave", lightDefault);		
 	}
 
 	if(mode == 'blue'){
