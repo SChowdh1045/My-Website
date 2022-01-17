@@ -207,27 +207,29 @@
 	<script type="module">
 		// Import the functions you need from the SDKs you need
 		import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.3/firebase-app.js";
-		import { getDatabase, ref, set, push} from "https://www.gstatic.com/firebasejs/9.6.3/firebase-database.js";		
-	  
-		// My web app's Firebase configuration
+		import { getDatabase, ref, push, set } from "https://www.gstatic.com/firebasejs/9.6.3/firebase-database.js";
+		// TODO: Add SDKs for Firebase products that you want to use
+		// https://firebase.google.com/docs/web/setup#available-libraries
+
+		// Your web app's Firebase configuration
 		const firebaseConfig = {
-		  apiKey: "AIzaSyCtpeT3Raf7a9-E3JZObP1yFlJiylTX_9U",
-		  authDomain: "contact-form-aca65.firebaseapp.com",
-		  projectId: "contact-form-aca65",
-		  storageBucket: "contact-form-aca65.appspot.com",
-		  messagingSenderId: "234835608175",
-		  appId: "1:234835608175:web:5c05d0a2c7cf59ee07039a"
+			apiKey: "AIzaSyD_6DtlCaHF1K95xVwdHZhkG-29FYpXZJ4",
+			authDomain: "submit-6369b.firebaseapp.com",
+			projectId: "submit-6369b",
+			storageBucket: "submit-6369b.appspot.com",
+			messagingSenderId: "351917562905",
+			appId: "1:351917562905:web:4e7a30b47ef2ef8093de88"
 		};
-	  
+
 		// Initialize Firebase
 		const app = initializeApp(firebaseConfig);
 
 		const db = getDatabase(app);
-		const dbRef = ref(db, "Users"); //Parent node #1 (main node) named "Users" to keep track of users
-		const newUser = push(dbRef); //Pushing child nodes, where each child node is a user that has sent mail
+		const dbRef = ref(db, 'Recipients'); //Parent node #1 (main node) named "Recipients" to keep track of users
+		const newRecipient = push(dbRef); //Pushing child nodes, where each child node is a user that has sent mail
 		
 		//Upon submitting the form
-		document.querySelector("#submit-btn"),addEventListener("submit", (event) => {
+		document.querySelector("#submit-btn").addEventListener("submit", (event) => {
 			event.preventDefault();
 
 			// WRITING ONTO DATABASE
@@ -237,14 +239,14 @@
 			let email = info[1].value;
 			let message = info[2].value;
 
-			set( newUser, {
+			set( newRecipient, {
 				userName: name,				
 				userEmail: email,
 				userMessage: message,
 			} );			
 
 			// SENDING EMAIL
-			sendEmail(name, email, message);
+			// sendEmail(name, email, message);
 
 			document.querySelector("#contact-form").reset(); //Simply resetting the contact form fields
 		} );
