@@ -100,7 +100,7 @@
 					<h4>SKILLS</h4>
 
 					<p>Currently focusing on front-end and cloud computing skills: 
-						<a target="_blank" href="Transform Resume.pdf">My Resume</a></p>
+						<a target="_blank" href="Salman_Chowdhury_Resume.pdf">My Resume</a></p>
 
 					<div id="skills">
 						<ul>
@@ -183,7 +183,7 @@
 		<div class="main-container">
 			<h3 style="text-align: center;">Get In Touch</h3>
 
-			<form method="POST"  id="contact-form"> 
+			<form method="post" id="contact-form"> 
 				<label>Name</label>
 				<input class="input-field" type="text" name="name" required>
 
@@ -210,24 +210,24 @@
 		import { getDatabase, ref, push, set } from "https://www.gstatic.com/firebasejs/9.6.3/firebase-database.js";
 		// TODO: Add SDKs for Firebase products that you want to use
 		// https://firebase.google.com/docs/web/setup#available-libraries
-
+	  
 		// Your web app's Firebase configuration
 		const firebaseConfig = {
-			apiKey: "AIzaSyD_6DtlCaHF1K95xVwdHZhkG-29FYpXZJ4",
-			authDomain: "submit-6369b.firebaseapp.com",
-			projectId: "submit-6369b",
-			storageBucket: "submit-6369b.appspot.com",
-			messagingSenderId: "351917562905",
-			appId: "1:351917562905:web:4e7a30b47ef2ef8093de88"
+		  apiKey: "AIzaSyB4adhp6PKGZ2pEj7O6pDwNfHrs4EGoKIc",
+		  authDomain: "contact-form-website-dd92e.firebaseapp.com",
+		  projectId: "contact-form-website-dd92e",
+		  storageBucket: "contact-form-website-dd92e.appspot.com",
+		  messagingSenderId: "346579394224",
+		  appId: "1:346579394224:web:7f8e2ed67f58bc94aea575"
 		};
-
+	  
 		// Initialize Firebase
 		const app = initializeApp(firebaseConfig);
 
 		const db = getDatabase(app);
-		const dbRef = ref(db, 'Recipients'); //Parent node #1 (main node) named "Recipients" to keep track of users
-		const newRecipient = push(dbRef); //Pushing child nodes, where each child node is a user that has sent mail
-		
+		const userRef = ref(db, 'users');
+		const pushed = push(userRef);
+
 		//Upon submitting the form
 		document.querySelector("#submit-btn").addEventListener("submit", (event) => {
 			event.preventDefault();
@@ -238,31 +238,31 @@
 			let name = info[0].value;
 			let email = info[1].value;
 			let message = info[2].value;
+			console.log(`${name} <br> ${email} <br> ${message}`);
 
-			set( newRecipient, {
+			set( pushed, {
 				userName: name,				
 				userEmail: email,
-				userMessage: message,
+				userMessage: message
 			} );			
 
-			// SENDING EMAIL
-			// sendEmail(name, email, message);
-
 			document.querySelector("#contact-form").reset(); //Simply resetting the contact form fields
+
+			// SENDING EMAIL
+			// sendEmail(name, email, message);			
 		} );
 
 		function sendEmail(name, email, message){
 			Email.send({
 				Host: "smtp.gmail.com",
 				Username: "schowdhury3262@gmail.com",
-				Password: "vrvszgzrgrzyeqmk",
+				Password: "mhhdyczbeaaiptme",
 				To: "schowdhury3262@gmail.com",
 				From: "schowdhury3262@gmail.com",
 				Subject: `${name} has sent you a message`,
 				Body: `Name: ${name} <br> Email: ${email} <br> Message: ${message}`,
 			});
     	}
- 
-	</script>
+	  </script>
 </body>
 </html>
