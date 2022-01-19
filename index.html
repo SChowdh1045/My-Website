@@ -240,7 +240,7 @@
 			let email = info[1].value;
 			let message = info[2].value;				
 
-			set( pushed, {
+			set(pushed, {
 				userName: name,				
 				userEmail: email,
 				userMessage: message
@@ -249,7 +249,7 @@
 			document.querySelector("#contact-form").reset(); //Simply resetting the contact form fields
 
 			// SENDING EMAIL
-			sendEmail(name, email, message);			
+			// sendEmail(name, email, message);			
 		} );
 
 		function sendEmail(name, email, message){
