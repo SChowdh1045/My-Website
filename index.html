@@ -183,7 +183,7 @@
 		<div class="main-container">
 			<h3 style="text-align: center;">Get In Touch</h3>
 
-			<form method="post" id="contact-form"> 
+			<form id="contact-form" method="POST">  
 				<label>Name</label>
 				<input class="input-field" type="text" name="name" required>
 
@@ -213,12 +213,13 @@
 	  
 		// Your web app's Firebase configuration
 		const firebaseConfig = {
-		  apiKey: "AIzaSyB4adhp6PKGZ2pEj7O6pDwNfHrs4EGoKIc",
-		  authDomain: "contact-form-website-dd92e.firebaseapp.com",
-		  projectId: "contact-form-website-dd92e",
-		  storageBucket: "contact-form-website-dd92e.appspot.com",
-		  messagingSenderId: "346579394224",
-		  appId: "1:346579394224:web:7f8e2ed67f58bc94aea575"
+			apiKey: "AIzaSyB4adhp6PKGZ2pEj7O6pDwNfHrs4EGoKIc",
+			authDomain: "contact-form-website-dd92e.firebaseapp.com",
+			databaseURL: "https://contact-form-website-dd92e-default-rtdb.firebaseio.com",
+			projectId: "contact-form-website-dd92e",
+			storageBucket: "contact-form-website-dd92e.appspot.com",
+			messagingSenderId: "346579394224",
+			appId: "1:346579394224:web:7f8e2ed67f58bc94aea575"
 		};
 	  
 		// Initialize Firebase
@@ -229,7 +230,7 @@
 		const pushed = push(userRef);
 
 		//Upon submitting the form
-		document.querySelector("#submit-btn").addEventListener("submit", (event) => {
+		document.querySelector("#submit-btn").addEventListener("click", (event) => {						
 			event.preventDefault();
 
 			// WRITING ONTO DATABASE
@@ -237,14 +238,13 @@
 
 			let name = info[0].value;
 			let email = info[1].value;
-			let message = info[2].value;
-			console.log(`${name} <br> ${email} <br> ${message}`);
+			let message = info[2].value;				
 
 			set( pushed, {
 				userName: name,				
 				userEmail: email,
 				userMessage: message
-			} );			
+			} );					
 
 			document.querySelector("#contact-form").reset(); //Simply resetting the contact form fields
 
