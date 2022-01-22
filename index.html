@@ -226,8 +226,7 @@
 		const app = initializeApp(firebaseConfig);
 
 		const db = getDatabase(app);
-		const userRef = ref(db, 'users');
-		const pushed = push(userRef);
+		const userRef = ref(db, 'Users');		
 
 		//Upon submitting the form
 		document.querySelector("#submit-btn").addEventListener("click", (event) => {						
@@ -238,7 +237,9 @@
 
 			let name = info[0].value;
 			let email = info[1].value;
-			let message = info[2].value;				
+			let message = info[2].value;
+
+			const pushed = push(userRef);				
 
 			set(pushed, {
 				userName: name,				
@@ -249,7 +250,7 @@
 			document.querySelector("#contact-form").reset(); //Simply resetting the contact form fields
 
 			// SENDING EMAIL
-			// sendEmail(name, email, message);			
+			sendEmail(name, email, message);			
 		} );
 
 		function sendEmail(name, email, message){
