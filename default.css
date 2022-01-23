@@ -390,7 +390,7 @@ h6 { font-size: 16px;}
 
 .input-field{
 	width: 100%;
-	padding: 10px 5px;
+	padding: 10px 0;
 	background-color: var(--secondaryColor);
 	border-radius: 5px;
 	border:1px solid var(--borderColor);
@@ -413,6 +413,10 @@ h6 { font-size: 16px;}
 
 #submit-btn:active{
 	background-color: var(--secondaryColor);
+}
+
+#contact-form textarea{
+	max-width: 600px;
 }
 
 /************************** Button Animations **************************/

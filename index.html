@@ -139,12 +139,9 @@
 
 						<li>
 							<a target="_blank" href="https://www.instagram.com/schowdhury3262/">Instagram: @schowdhury3262</a>
-						</li>
+						</li>												
 						
-						
-						
-					</ul>
-						
+					</ul>						
 					
 				</div>
 			</div>
@@ -203,15 +200,13 @@
 	<button id="backToTop"><i class="fas fa-arrow-up"></i></button>
 
 
-	<!---------------- CONTACT FORM JS ---------------->
+	<!---------------- CONTACT FORM using JavaScript & Firebase ---------------->
 	<script type="module">
-		// Import the functions you need from the SDKs you need
+		// Importing the functions I need from the SDKs I need
 		import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.3/firebase-app.js";
-		import { getDatabase, ref, push, set } from "https://www.gstatic.com/firebasejs/9.6.3/firebase-database.js";
-		// TODO: Add SDKs for Firebase products that you want to use
-		// https://firebase.google.com/docs/web/setup#available-libraries
+		import { getDatabase, ref, push, set } from "https://www.gstatic.com/firebasejs/9.6.3/firebase-database.js";		
 	  
-		// Your web app's Firebase configuration
+		// My web app's Firebase configuration
 		const firebaseConfig = {
 			apiKey: "AIzaSyB4adhp6PKGZ2pEj7O6pDwNfHrs4EGoKIc",
 			authDomain: "contact-form-website-dd92e.firebaseapp.com",
@@ -226,9 +221,9 @@
 		const app = initializeApp(firebaseConfig);
 		
 		const db = getDatabase(app);
-		const userRef = ref(db, 'Users');		
+		const userRef = ref(db, 'Users');	//Parent node "Users" that'll keep track of the list of users who wish to contact me	
 
-		//Upon submitting the form
+		//Upon submitting the form by clicking the "Submit" button
 		document.querySelector("#submit-btn").addEventListener("click", (event) => {						
 			event.preventDefault();
 
@@ -239,7 +234,7 @@
 			let email = info[1].value;
 			let message = info[2].value;
 
-			const pushed = push(userRef);				
+			const pushed = push(userRef);  //Setting the unique ID to each user		
 
 			set(pushed, {
 				userName: name,				
@@ -262,7 +257,8 @@
 				From: "schowdhury3262@gmail.com",
 				Subject: `${name} has sent you a message`,
 				Body: `Name: ${name} <br> Email: ${email} <br> Message: ${message}`,
-			});
+			
+			}).then( () => alert("Mail has been sent!") );
     	}
 	</script>
 </body>
