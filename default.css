@@ -7,6 +7,8 @@
 	--mainText:black;
 	--secondaryText:#4b5156;
 
+	--navHover: #595959;	
+
 	--themeDotBorder:#24292e;
 
 	--previewBg:rgb(251, 249, 243, 0.8);
@@ -70,26 +72,15 @@ h6 { font-size: 16px;}
 
 
 .main-container{
-	width: 1200px;
+	width: 90%;
 	margin: 0 auto;
 	margin-bottom: 30px;
-}
-
-
-.greeting-wrapper{
-	display: grid;
-	text-align: center;
-	align-content: center;
-	min-height: 9em;
-
 }
 
 /************************** INTRO **************************/
 .intro-wrapper{
 	background-color: var(--secondaryColor);
-	border:1px solid var(--borderColor);
-	border-radius:5px 5px 0 0;
-
+	border: 1px solid var(--borderColor);
 
 	-webkit-box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.75);
 	-moz-box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.75);
@@ -97,68 +88,53 @@ h6 { font-size: 16px;}
 
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	grid-template-areas: 
-		'nav-wrapper nav-wrapper'
+	grid-template-areas:		
 		'left-column right-column'
 	;
 }
 
 
 .nav-wrapper{
-	border-radius:5px 5px 0 0;
-	grid-area:nav-wrapper;
-	border-bottom: 1px solid var(--borderColor);
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	background-color: var(--mainColor);
-}
-
-#navigation a{
-	color:var(--mainText);
-}
-
-
-#navigation{
-	margin:0;
-	padding: 10px;
-}
-
-#navigation li{
-	display: inline-block;
-	margin-right: 5px;
-	margin-left:5px;
-}
-
-.dots-wrapper{
-	display: flex;
-	padding: 10px;
-}
-
-#dot-1{
-	background-color:  #FC6058;
-}
-
-#dot-2{
-	background-color:  #FEC02F;
-}
-
-#dot-3{
-	background-color:  #2ACA3E;
-}
-
-.browser-dot{
-	background-color: black;
-	height: 15px;
-	width: 15px;
-	border-radius: 50%;
-	margin: 5px;
+	background-color: var(--secondaryColor);
+	border: 1px solid var(--borderColor);
 
 	-webkit-box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.75);
 	-moz-box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.75);
 	box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.75);
 
+	border-radius:5px 5px 0 0;			
+	background-color: var(--mainColor);
 }
+
+.nav-btn{
+	width: 55%;
+	margin: auto;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	padding-left: 0;	
+	
+}
+
+.nav-btn li{		
+	padding: 15px;
+}
+
+.nav-btn li{		
+	padding: 15px;
+} 
+
+.nav-btn a{
+	padding: 5px;
+	color: var(--mainText)
+}
+
+.nav-btn a:hover{
+	padding: 10px;
+	color: var(--navHover);
+}
+
+
 
 .left-column{
 	grid-area: left-column;
@@ -220,12 +196,6 @@ h6 { font-size: 16px;}
 
 #purple-mode{
 	background-color: #7E4C74;
-}
-
-#settings-note{
-	font-size: 12px;
-	font-style: italic;
-	text-align: center;
 }
 
 .right-column{
