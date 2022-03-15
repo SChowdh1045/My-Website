@@ -4,6 +4,8 @@
 
 	--borderColor:#c1c1c1;
 
+	--navbar: #d4d1d1;
+
 	--mainText:black;
 	--secondaryText:#4b5156;
 
@@ -14,7 +16,6 @@
 	--previewBg:rgb(251, 249, 243, 0.8);
 	--previewShadow:#f0ead6;
 
-
 	--buttonColor:black;
 }
 
@@ -23,6 +24,9 @@ html, body{
 	padding: 0;
 	margin: 0;
 	scroll-behavior: smooth;
+}
+html{
+	scroll-padding-top: 53px;
 }
 
 body *{
@@ -42,8 +46,8 @@ p, li, span, label, input, textarea{
 }
 
 a{
-	text-decoration: none;
-	color:#17a2b8;
+	font-family: 'Russo One', sans-serif;
+	text-decoration: none;	
 }
 
 ul{
@@ -72,12 +76,80 @@ h6 { font-size: 16px;}
 
 
 .main-container{
-	width: 90%;
-	margin: 0 auto;
-	margin-bottom: 30px;
+	width: 82%;
+	margin: 0 auto;	
 }
 
 /************************** INTRO **************************/
+.nav-wrapper{	
+	display: flex;
+	justify-content: space-between;
+
+	background-color: var(--navbar);
+	border: 1px solid var(--borderColor);
+	padding: 5px 0;
+
+	-webkit-box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.75);
+	-moz-box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.75);
+	box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.75);
+
+	border-radius: 0 0 1px 1px;
+
+	position: sticky;		
+	top: 0;
+	z-index: 1;
+}
+
+#home_btn img{
+	width: 32px;
+	height: 32px;	
+}
+
+#home_btn{
+	align-self: center;
+	margin-left: 9%;
+}
+
+#home_btn:hover{
+	padding: 0 5px;
+}
+
+.nav-btn{
+	display: inline-flex;
+	padding-left: 0;
+	margin-left: 3%;
+}
+
+.nav-btn a{
+	padding: 10px 20px;
+	color: var(--mainText);	
+}
+
+.nav-btn a:hover{
+	padding: 10px 25px;
+	color: var(--navHover);
+}
+
+#contact-me{
+	background-color: var(--secondaryColor);
+	padding: 10px;
+	border: 2px solid black;
+	border-radius: 10px;	
+	align-self: center;
+	margin-right: 4%;
+}
+
+#contact-me a{
+	color: var(--mainText);
+	padding: 10px 15px;
+}
+
+#contact-me a:hover{
+	padding: 10px 20px;
+	color: var(--navHover);
+}
+
+
 .intro-wrapper{
 	background-color: var(--secondaryColor);
 	border: 1px solid var(--borderColor);
@@ -86,54 +158,14 @@ h6 { font-size: 16px;}
 	-moz-box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.75);
 	box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.75);
 
+	border-radius: 13px 13px 0 0;
+
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	grid-template-areas:		
 		'left-column right-column'
 	;
 }
-
-
-.nav-wrapper{
-	background-color: var(--secondaryColor);
-	border: 1px solid var(--borderColor);
-
-	-webkit-box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.75);
-	-moz-box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.75);
-	box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.75);
-
-	border-radius:5px 5px 0 0;			
-	background-color: var(--mainColor);
-}
-
-.nav-btn{
-	width: 55%;
-	margin: auto;
-	display: flex;
-	justify-content: space-evenly;
-	align-items: center;
-	padding-left: 0;	
-	
-}
-
-.nav-btn li{		
-	padding: 15px;
-}
-
-.nav-btn li{		
-	padding: 15px;
-} 
-
-.nav-btn a{
-	padding: 5px;
-	color: var(--mainText)
-}
-
-.nav-btn a:hover{
-	padding: 10px;
-	color: var(--navHover);
-}
-
 
 
 .left-column{
@@ -185,7 +217,6 @@ h6 { font-size: 16px;}
 	border-width: 5px;
 }
 
-
 #light-mode{
 	background-color: #fff;
 }
@@ -197,6 +228,7 @@ h6 { font-size: 16px;}
 #purple-mode{
 	background-color: #7E4C74;
 }
+
 
 .right-column{
 	grid-area: right-column;
@@ -276,6 +308,14 @@ h6 { font-size: 16px;}
 	padding: 0;
 }
 
+#resume{
+	color: var(--mainText);
+}
+
+#resume:hover{
+	color: var(--secondaryText);
+}
+
 .social-links{
 	display: grid;
 	align-content: center;
@@ -291,6 +331,13 @@ h6 { font-size: 16px;}
 	margin: 0;
 }
 
+#social_links_list a{
+	color: var(--mainText);
+}
+
+#social_links_list a:hover{
+	color: var(--secondaryText);
+}
 /************************** EDUCATION **************************/
 .education{
 	display: flex;

@@ -1,11 +1,13 @@
 :root{
-	--mainColor:#46344E;
-	--secondaryColor:#382a3f;
+	--mainColor:#382a3f;
+	--secondaryColor:#46344E;
 
 	--borderColor:#1d1520;
 
+	--navbar: #2e2433;
+
 	--mainText:#fff;
-	--secondaryText:#eeeeee;
+	--secondaryText:#dfd9d9;
 
 	--navHover: #c653c6;
 

@@ -33,6 +33,7 @@ function btnBackgroundColor(enter_leave,btn_Theme){
 
 function setTheme(mode){
 	const toTopBtn = document.querySelector("#backToTop");
+	const navbar_img = document.querySelector("#home_btn");
 
 	//Button Background Colors ; can be default or when hovering over the button
 	let lightDefault = "#252727";
@@ -43,21 +44,24 @@ function setTheme(mode){
 	let purpleHover = "#c653c6";
 
 	if(mode == 'light'){
-		document.querySelector("#theme-style").href = 'default.css'
+		document.querySelector("#theme-style").href = 'default.css';
+		navbar_img.innerHTML = "<img src=\"images\\home-b.png\" alt=\"home button\">"
 		toTopBtn.style.backgroundColor = lightDefault;
 		btnBackgroundColor("mouseenter", lightHover);
 		btnBackgroundColor("mouseleave", lightDefault);		
 	}
 
 	if(mode == 'blue'){
-		document.querySelector("#theme-style").href = 'blue.css'
+		document.querySelector("#theme-style").href = 'blue.css';
+		navbar_img.innerHTML = "<img src=\"images\\home-w.png\" alt=\"home button\">"
 		toTopBtn.style.backgroundColor = blueDefault;
 		btnBackgroundColor("mouseenter", blueHover);
 		btnBackgroundColor("mouseleave", blueDefault);
 	}
 
 	if(mode == 'purple'){
-		document.querySelector("#theme-style").href = 'purple.css'
+		document.querySelector("#theme-style").href = 'purple.css';
+		navbar_img.innerHTML = "<img src=\"images\\home-w.png\" alt=\"home button\">"
 		toTopBtn.style.backgroundColor = purpleDefault;
 		btnBackgroundColor("mouseenter", purpleHover);
 		btnBackgroundColor("mouseleave", purpleDefault);

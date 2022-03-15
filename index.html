@@ -24,21 +24,25 @@
 <body>
 
 	<!---------------- INTRODUCTION ---------------->
-	<section class="s1" id="intro">
+	<nav class="nav-wrapper">
+		<a id="home_btn" href="#home"><img src="images\home-b.png" alt="home button"></a>  <!-- image by "Freepik" -->
+
+		<ul class="nav-btn">						 
+			<li><a href="#intro">Intro</a></li>										
+			<li><a href="#skills_socials">Skills & Socials</a></li>
+			<li><a href="#edu">Education</a></li>
+			<li><a href="#projects">Projects</a></li>								
+		</ul>
+		
+		<div id="contact-me"><a href="#contact">Contact Me</a></div>
+	</nav>
+
+	<section class="s1" id="home">
 		<div class="main-container">
 			
 			<h1 style="text-align: center;">Salman Chowdhury</h1>						
-			
-			<div class="nav-wrapper">
-				<ul class="nav-btn">												
-					<li><a href="#skills_socials">Skills & Socials</a></li>
-					<li><a href="#edu">Education</a></li>
-					<li><a href="#projects">Projects</a></li>	
-					<li><a href="#contact">Contact Me</a></li>					
-				</ul>										
-			</div>
-			
-			<div class="intro-wrapper">
+						
+			<div class="intro-wrapper" id="intro">
 
 				<div class="left-column">
 					<img id="profile_pic" src="images/110038846.jpg">
@@ -92,7 +96,7 @@
 					<h4>SKILLS</h4>
 
 					<p>Currently focusing on front-end and artificial intelligence: 
-						<a target="_blank" href="Salman_Chowdhury_Resume.pdf">My Resume</a></p>
+						<a id="resume" target="_blank" href="Salman_Chowdhury_Resume.pdf">My Resume</a></p>
 
 					<div id="skills">
 						<ul>
@@ -115,9 +119,9 @@
 				
 				<div class="social-links">
 					<img id="social_img" src="images/social-media.jpg">
-					<h3 style="margin: 18px 0;">Some of my social links</h3>
+					<h3 style="margin: 18px 0; text-decoration: underline;">Some of my social links</h3>
 					
-					<ul>
+					<ul id="social_links_list">
 						<li>
 							<a target="_blank" href="https://github.com/SChowdh1045">Github: @SChowdh1045</a>				
 						</li>
@@ -168,10 +172,10 @@
 	</section>
 
 	<!---------------- PROJECTS ---------------->
-	<section class="s2" id="projects">
+	<section class="s2" id="projects" style="padding-bottom: 50px;">
 		<div class="main-container">
-		<h2 style="text-align: center;margin-bottom: 0;">Projects</h2>
-		<h5 style="text-align: center;margin-top: 0;">(More on the way... ☺)</h5>
+			<h2 style="text-align: center;margin-bottom: 0;">Projects</h2>
+			<h5 style="text-align: center;margin-top: 0;">(More on the way... ☺)</h5>
 
 			<div class="my-projects">
 
@@ -191,7 +195,7 @@
 	</section>
 
 	<!---------------- CONTACT ---------------->
-	<section class="s1" id="contact">
+	<section class="s1" id="contact" style="padding-bottom: 12px;">
 		<div class="main-container">
 			<h3 style="text-align: center;">Get In Touch</h3>
 
