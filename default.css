@@ -26,7 +26,7 @@ html, body{
 	scroll-behavior: smooth;
 }
 html{
-	scroll-padding-top: 53px;
+	scroll-padding-top: 10%;
 }
 
 body *{
@@ -116,7 +116,7 @@ h6 { font-size: 16px;}
 
 .nav-btn{
 	display: inline-flex;
-	padding-left: 0;
+	padding-left: 0;  /* There's some padding on the left of lists by default. This just gets rid of that */
 	margin-left: 3%;
 }
 
@@ -385,30 +385,36 @@ h6 { font-size: 16px;}
 
 /************************** PROJECTS **************************/
 .my-projects{
-	display: flex;
-	justify-content: space-around;
+	display: grid;
+	grid-template-columns: repeat(2, minmax(100px,1fr));
+	justify-items: center;
+	align-items: stretch;
 }
 
-#Night-of-the-Invaders{
-	width: 315px;
-	padding: 10px;
+#Night-of-the-Invaders, #Website{
+	width: 63%;
+	padding: 4% 2%;
 	border-radius: 13px;
 	background-color: var(--mainColor);
 	text-align: center;
 }
 
-#Night-of-the-Invaders img{
-	width: 301.2px;
-	height: 169.4px;
-}
-
-#Night-of-the-Invaders h4, h6{
+#Night-of-the-Invaders h4, h6, #Website h4, h6{
 	margin: 8px 0;
 }
 
-#Night-of-the-Invaders a:hover{
-	border-radius: 3px;
+#Night-of-the-Invaders h6, #Website h6{
+	color: var(--secondaryText);
+}
+
+#Night-of-the-Invaders a:hover, #Website a:hover{
+	border-radius: 0 0 19px 19px;	
 	background-color: #17a2b8;
+}
+
+#Night-of-the-Invaders img, #Website img{
+	border: 2px solid var(--borderColor);
+	border-radius: 10px;
 }
 
 
