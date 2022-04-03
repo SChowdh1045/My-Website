@@ -25,6 +25,7 @@ html, body{
 	margin: 0;
 	scroll-behavior: smooth;
 }
+
 html{
 	scroll-padding-top: 10%;
 }
@@ -384,37 +385,51 @@ h6 { font-size: 16px;}
 }
 
 /************************** PROJECTS **************************/
+#project-container{
+	width: 95%;
+	margin: 0 auto;
+}
+
 .my-projects{
 	display: grid;
-	grid-template-columns: repeat(2, minmax(100px,1fr));
+	grid-template-columns: repeat(3, minmax(100px,1fr));
 	justify-items: center;
 	align-items: stretch;
 }
 
-#Night-of-the-Invaders, #Website{
+#Night-of-the-Invaders, #Website, #Todo{
 	width: 63%;
-	padding: 4% 2%;
+	padding: 4%;
 	border-radius: 13px;
 	background-color: var(--mainColor);
 	text-align: center;
 }
 
-#Night-of-the-Invaders h4, h6, #Website h4, h6{
+#Night-of-the-Invaders h4, h6, 
+#Website h4, h6, 
+#Todo h4, h6{
 	margin: 8px 0;
 }
 
-#Night-of-the-Invaders h6, #Website h6{
+#Night-of-the-Invaders h6, 
+#Website h6, 
+#Todo h6{
 	color: var(--secondaryText);
 }
 
-#Night-of-the-Invaders a:hover, #Website a:hover{
+#Night-of-the-Invaders a:hover, 
+#Website a:hover, 
+#Todo a:hover{
 	border-radius: 0 0 19px 19px;	
 	background-color: #17a2b8;
 }
 
-#Night-of-the-Invaders img, #Website img{
+#Night-of-the-Invaders img, 
+#Website img, 
+#Todo img{
+	max-width: 100%;
 	border: 2px solid var(--borderColor);
-	border-radius: 10px;
+	border-radius: 10px;	
 }
 
 
