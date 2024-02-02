@@ -40,8 +40,10 @@ function setTheme(mode){
 	//Button Background Colors ; can be default or when hovering over the button
 	let lightDefault = "#252727";
 	let lightHover = "#595959";
+
 	let blueDefault = "#05407a";
 	let blueHover = "#0066cc";
+	
 	let purpleDefault = "#862d86";
 	let purpleHover = "#c653c6";
 

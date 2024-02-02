@@ -19,6 +19,10 @@
 	--buttonColor:black;
 }
 
+* {
+	box-sizing: border-box;
+  }
+  
 
 html, body{
 	padding: 0;
@@ -65,14 +69,14 @@ h6 { font-size: 16px;}
 
 .s1{
 	background-color: var(--mainColor);
-	border-bottom:1px solid var(--borderColor);
+	border-bottom: 2px solid var(--borderColor);
 	overflow:auto;
 }
 
 .s2{
 	background-color: var(--secondaryColor);
-	border-bottom:2px solid var(--borderColor);
-	overflow:auto;
+	border-bottom: 2px solid var(--borderColor);
+	overflow: auto;
 }
 
 
@@ -118,7 +122,6 @@ h6 { font-size: 16px;}
 .nav-btn{
 	display: inline-flex;
 	padding-left: 0;  /* There's some padding on the left of lists by default. This just gets rid of that */
-	margin-left: 3%;
 }
 
 .nav-btn a{
@@ -339,6 +342,7 @@ h6 { font-size: 16px;}
 #social_links_list a:hover{
 	color: var(--secondaryText);
 }
+
 /************************** EDUCATION **************************/
 .education{
 	display: flex;
@@ -367,67 +371,74 @@ h6 { font-size: 16px;}
 	margin-top: 0;
 }
 
-#uni{
+.uni{
 	text-align: center;
 }
 
-#uni img{
+.uni img{
 	width: 96.2px;
 	height: 119px;
 }
 
-#uni h4{
+.uni h4{
 	margin-bottom: 10px;
 }
 
-#uni p:first-of-type{
+.uni p:first-of-type{
 	margin-top: 4px;
+}
+
+/************************** EXPERIENCE **************************/
+#fgf{
+	text-align: center;
+}
+
+#fgf img{
+	width: 110px;
+}
+
+#fgf h4{
+	margin-bottom: 20px;
 }
 
 /************************** PROJECTS **************************/
 #project-container{
-	width: 95%;
+	width: 85%;
 	margin: 0 auto;
 }
 
 .my-projects{
 	display: grid;
 	grid-template-columns: repeat(3, minmax(100px,1fr));
-	justify-items: center;
+	grid-template-rows: repeat(2, 1fr);
+	justify-content: center;
 	align-items: stretch;
+	gap: 5%;
 }
 
-#Night-of-the-Invaders, #Website, #Todo{
-	width: 63%;
+.project_item{
 	padding: 4%;
+	border: 2px solid var(--borderColor);
 	border-radius: 13px;
-	background-color: var(--mainColor);
+	background-color: var(--secondaryColor);
 	text-align: center;
 }
 
-#Night-of-the-Invaders h4, h6, 
-#Website h4, h6, 
-#Todo h4, h6{
+.project_item h4, h6{
 	margin: 8px 0;
 }
 
-#Night-of-the-Invaders h6, 
-#Website h6, 
-#Todo h6{
+.project_item h6{
 	color: var(--secondaryText);
 }
 
-#Night-of-the-Invaders a:hover, 
-#Website a:hover, 
-#Todo a:hover{
+.project_item a:hover{
 	border-radius: 0 0 19px 19px;	
 	background-color: #17a2b8;
 }
 
-#Night-of-the-Invaders img, 
-#Website img, 
-#Todo img{
-	max-width: 100%;
+.project_item img{
+	width: 100%;
 	border: 2px solid var(--borderColor);
 	border-radius: 10px;	
 }
@@ -537,7 +548,6 @@ h6 { font-size: 16px;}
 	  transform: translate3d(0, 100%, 0);
 	}
   }
-
 
 
 /************************** Media Screens **************************/
