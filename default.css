@@ -70,13 +70,13 @@ h6 { font-size: 16px;}
 .s1{
 	background-color: var(--mainColor);
 	border-bottom: 2px solid var(--borderColor);
-	overflow:auto;
+	overflow: hidden;
 }
 
 .s2{
 	background-color: var(--secondaryColor);
 	border-bottom: 2px solid var(--borderColor);
-	overflow: auto;
+	overflow: hidden;
 }
 
 
@@ -586,4 +586,38 @@ h6 { font-size: 16px;}
 
 	}
 
+}
+
+
+/************************** Animations **************************/
+@keyframes fadeInName {
+	from { opacity: 0; transform: translateX(-50%);}
+	to { opacity: 1; transform: translateX(0px);}
+}
+
+@keyframes fadeInOther {
+	from { opacity: 0;}
+	to { opacity: 1;}
+}
+
+#name{
+	/* The shorthand properties are (in order): animation-name, animation-duration, animation-timing-function, animation-fill-mode, animation-delay */
+	animation: fadeInName 2.5s ease forwards 0.3s;
+}
+  
+#home_btn, .nav-btn , #contact-me , #profile_pic, .right-column{
+	/* The shorthand properties are (in order): animation-name, animation-duration, animation-timing-function, animation-fill-mode, animation-delay */
+	animation: fadeInOther 3s ease forwards 0.3s;
+}
+
+
+.testing{
+	opacity: 0;
+  	transform: translateY(90px); /* Initial position */
+}
+
+.active {
+	opacity: 1;
+	transform: translateY(0); /* Final position */
+	transition: opacity 0.5s ease, transform 0.5s ease;
 }
