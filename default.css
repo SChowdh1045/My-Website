@@ -611,7 +611,8 @@ h6 { font-size: 16px;}
 }
 
 
-.testing{
+/* Scroll animation gets activated when the element is in the viewport (via website(js).js) */
+.scroll_animation_inactive{
 	opacity: 0;
   	transform: translateY(90px); /* Initial position */
 }

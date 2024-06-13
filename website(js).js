@@ -88,10 +88,11 @@ function btnBackgroundColor(enter_leave, btn_Theme){
 
 const toTop = document.querySelector("#backToTop");
 
-// Select all sections
-const sections = document.querySelectorAll('.testing');
+// Selecting all the sections that I want to apply the scroll-animation to
+const sections = document.querySelectorAll('.scroll_animation_inactive');
 
-//To make the scroll-to-top button appear/disappear while scrolling
+// To make the scroll-to-top button appear/disappear while scrolling
+// Also to make the sections appear when they are in the viewport (the scroll-animation)
 function handleScroll(){
 	sections.forEach(section => {
 		if (isInViewport(section)) {
@@ -115,11 +116,11 @@ function handleScroll(){
 	}
 }
 
-// Function to check if an element is in the viewport
+// Function to check if an element is in the viewport to apply the scroll-animation
 function isInViewport(element) {
     const rect = element.getBoundingClientRect();
     return (
-      rect.top <= (window.innerHeight - 50 || document.documentElement.clientHeight - 50)
+      rect.top <= (window.innerHeight - 50 || document.documentElement.clientHeight - 50) // 'window.innerHeight' is the height of the browser window. 'document.documentElement.clientHeight' is the height of the viewport.
     );
 }
 
